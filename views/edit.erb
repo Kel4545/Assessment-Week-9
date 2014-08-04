@@ -1,0 +1,6 @@
+<h3>Edit To Do</h3>
+<form method = "post" action = "/todos/<%= todo["id"] %>">
+  <input type="hidden" name= "_method" value="patch">
+  <textarea><%= todo["body"] %></textarea>
+  <button>Update</button>
+</form>
