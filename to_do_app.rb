@@ -73,7 +73,7 @@ class ToDoApp < Sinatra::Application
   end
 
   patch "/todos/:id" do
-    ToDoItem.where(:id => params[:id]).update_all(:body => params[:body])
+    ToDoItem.find(params[:id]).update(body: params[:edit])
     flash[:notice] = "ToDo Updated"
     redirect "/"
   end
